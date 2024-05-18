@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e4d88fb31bbd84cbfe797511d935b8, type: 3}
+  m_Name: DialogBox
+  m_EditorClassIdentifier: 
+  DialogTypes:
+  - _EnvIntractionType: 2
+    DialogText: Look like a Fairy Turned herself into a Statue. Make a Wish.
+  - _EnvIntractionType: 3
+    DialogText: Hey there, Lets make you look Good !!!
+  - _EnvIntractionType: 4
+    DialogText: A Grave yard of ancestors. Look like they are in heaven now.
+  - _EnvIntractionType: 5
+    DialogText: An Old Broken well. Looks like I'm going to be thirsty now.
