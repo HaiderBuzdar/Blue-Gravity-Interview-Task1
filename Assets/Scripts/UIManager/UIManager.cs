@@ -8,13 +8,13 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance;
 
-    public GameObject AttackBttn,DialogBoxPanel,ShopEnterButtn,SellGemPanel;
+    public GameObject AttackBttn, DialogBoxPanel, ShopEnterButtn, SellGemPanel;
 
     public DialogBox DialogScriptable;
 
-    public Text _CoinText,DialogBoxText,_GemsText;
+    public Text _CoinText, DialogBoxText, _GemsText;
 
-    public int CoinValue,CurrentValue=0;
+    public int CoinValue, CurrentValue = 0;
 
     public ClotheSellPurchasePanel _ClothePanel;
 
@@ -86,5 +86,10 @@ public class UIManager : MonoBehaviour
         ShopEnterButtn.SetActive(false);
         AttackBttn.SetActive(false);
         DialogBoxPanel.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
