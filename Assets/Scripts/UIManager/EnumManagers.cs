@@ -15,7 +15,17 @@ public enum Interactions
     Monument,
     ClotheShope,
     GraveYard,
-    OldWell
+    OldWell,
+    Gems
+}
+public enum ShopKeeperDialogType
+{
+    FirstCome,
+    Buy,
+    Sell,
+    Equip,
+    NoMoney,
+    Gems
 }
 
 public class EnumManagers 

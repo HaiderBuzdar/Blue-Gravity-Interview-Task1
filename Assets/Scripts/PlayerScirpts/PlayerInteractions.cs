@@ -15,7 +15,7 @@ public class PlayerInteractions : MonoBehaviour
 
     public CoinMaker _CoinMakerRef;
 
-    public string CoinMakerObject,Coin,Monument,GraveYard,OldWell,ClotheShop;
+    public string CoinMakerObject,Coin,Monument,GraveYard,OldWell,ClotheShop,Gems;
 
 
     private void Awake()
@@ -56,7 +56,12 @@ public class PlayerInteractions : MonoBehaviour
             _RefInteraction = Interactions.ClotheShope;
             OnEnvInteractionEnter?.Invoke(_RefInteraction);
         }
-
+        if (collision.gameObject.CompareTag(Gems))
+        {
+            collision.gameObject.SetActive(false);
+            _RefInteraction = Interactions.Gems;
+            OnEnvInteractionEnter?.Invoke(_RefInteraction);
+        }
 
 
     }

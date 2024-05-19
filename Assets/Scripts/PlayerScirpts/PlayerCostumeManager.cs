@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PlayerCostumeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PlayerCostumeManager Instance;
+
+    public SpriteRenderer _PlayerHood, PlayerTorso, _PlayerPelvis;
+
+    public Sprite[] Hoods, Torsos, Pelvises;
+
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetSuit(int x)
     {
-        
+        _PlayerHood.sprite = Hoods[x];
+        PlayerTorso.sprite = Torsos[x];
+        _PlayerPelvis.sprite = Pelvises[x];
     }
 }

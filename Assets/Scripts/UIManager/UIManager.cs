@@ -8,13 +8,15 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance;
 
-    public GameObject AttackBttn,DialogBoxPanel,ShopEnterButtn;
+    public GameObject AttackBttn,DialogBoxPanel,ShopEnterButtn,SellGemPanel;
 
     public DialogBox DialogScriptable;
 
-    public Text _CoinText,DialogBoxText;
+    public Text _CoinText,DialogBoxText,_GemsText;
 
     public int CoinValue,CurrentValue=0;
+
+    public ClotheSellPurchasePanel _ClothePanel;
 
     private void Start()
     {
@@ -26,8 +28,13 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        SetCoins();
     }
-
+    public void SetCoins()
+    {
+        _CoinText.text = PrefManager.GetCoins().ToString();
+        _GemsText.text = PrefManager.GetGems().ToString();
+    }
     public void OnEnvEnterInteraction(Interactions I)
     {
         switch (I)
@@ -54,9 +61,25 @@ public class UIManager : MonoBehaviour
                 break;
             case Interactions.Coin:
                 CurrentValue = CurrentValue + CoinValue;
+                PrefManager.SetCoins(CoinValue);
                 _CoinText.text = CurrentValue.ToString();
                 break;
+            case Interactions.Gems:
+                int gem;
+                PrefManager.SetGems(1);
+                gem = PrefManager.GetGems();
+                _GemsText.text = gem.ToString();
+                break;
         }
+    }
+
+    public void GemSold()
+    {
+        _ClothePanel.GemSold();
+        PrefManager.SetGems(-1);
+        PrefManager.SetCoins(50);
+        SetCoins();
+        SellGemPanel.SetActive(false);
     }
     public void OnEnvInteractedExit(Interactions i)
     {

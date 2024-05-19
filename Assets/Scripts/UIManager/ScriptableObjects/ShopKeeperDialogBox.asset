@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93480288c7b56c46b7e1cf50347e47c, type: 3}
+  m_Name: ShopKeeperDialogBox
+  m_EditorClassIdentifier: 
+  GemStrings:
+  - Oh where did you find it. Its of no use Sell it to me.
+  - Hahahah... It was worth 1000 coins.
+  StartingDialog: Hey. I've So much Suit to Offer Which one do you like?
+  BoughtDialog:
+  - I guess i sold it pretty much expensive
+  - I was going to Sell at lowest price but guess you dont want to debate
+  - Thanks God, That was in my shop from last 2 years. No one Likes it.
+  SellDialog:
+  - Eww. You smell so bad !!!. I guess my dog would love it
+  - I'm going to sell it at original price again
+  - Oh that might help me clean my windows.
+  EquipDialog:
+  - Damn. It looks good only on you.
+  - Not Bad. Maybe it is your lucky day.
+  - You look like a.......... Nothing, It looks good too.
+  NoMoney:
+  - Come back later brother
+  - Maybe you need to cut some woods & earn Money
+  - Do You want to work at my place & earn some Money

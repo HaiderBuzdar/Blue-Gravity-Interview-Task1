@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
 
     public float MoveSpeed = 2f;
 
-    public Transform _Player;
-
     Vector2 Movement = new Vector2();
+
+    public bool CanControl;
 
     private void Awake()
     {
@@ -34,17 +34,21 @@ public class PlayerController : MonoBehaviour
 
     void GetInputs()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float c = Mathf.Abs(x + y);
-        _PlayerAnimator.SetFloat(Walk, c);
-        Movement = new Vector2(x, y);
-
-        if (c>0)
+        if (CanControl)
         {
-            CheckRotation();
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            float c = Mathf.Abs(x + y);
+            _PlayerAnimator.SetFloat(Walk, c);
+            Movement = new Vector2(x, y);
 
+            if (Mathf.Abs(x) > 0)
+            {
+                CheckRotation();
+
+            }
         }
+        
     }
     void CheckRotation()
     {
@@ -53,13 +57,23 @@ public class PlayerController : MonoBehaviour
     }
     void MovePlayer()
     {
-        _PlayerRB.velocity = Movement * MoveSpeed;
+        if (CanControl)
+            _PlayerRB.velocity = Movement * MoveSpeed;
     }
-
 
     public void PlayerAttack()
     {
         _PlayerAnimator.Play("PlayerAttack");
 
+    }
+
+    public void PlayGame()
+    {
+        CanControl = true;
+    }
+
+    public void ShopEnter()
+    {
+        CanControl = false;
     }
 }
